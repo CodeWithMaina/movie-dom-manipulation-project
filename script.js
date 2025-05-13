@@ -3,32 +3,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const list = document.querySelector("#movie-list ul");
   const forms = document.forms;
 
-  // Handle click events on the movie list
   list.addEventListener("click", function (e) {
-    // Delete movie when delete button is clicked
+    // Deleting the movies
     if (e.target.className === "delete") {
       const li = e.target.parentElement.parentElement;
       li.parentNode.removeChild(li);
     }
 
-    // Edit movie when edit button is clicked
+    // Editing the movies
     else if (e.target.className === "edit") {
       const li = e.target.parentElement.parentElement;
       const movieNameSpan = li.querySelector(".name");
       const currentName = movieNameSpan.textContent;
 
-      // Create input field for editing
+      // Creating input field for editing
       const input = document.createElement("input");
       input.type = "text";
       input.value = currentName;
       movieNameSpan.replaceWith(input);
 
-      // Change Edit button to Save button
+      // Changing Edit button to Save button
       const saveBtn = document.createElement("button");
       saveBtn.textContent = "Save";
       saveBtn.classList.add("save");
 
-      // Style the save button
+      // Styling save button
       saveBtn.style.cssText = `
         background-color: #4CAF50;
         color: white;
@@ -41,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         transition: background-color 0.3s;
       `;
 
-      // Add hover effects to save button
+      // hover effects
       saveBtn.addEventListener("mouseenter", () => {
         saveBtn.style.backgroundColor = "#45a049";
       });
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.target.replaceWith(saveBtn);
     }
 
-    // Save changes when save button is clicked
+    // Saving changes from edit
     else if (e.target.className === "save") {
       const li = e.target.parentElement.parentElement;
       const input = li.querySelector("input[type='text']");
@@ -69,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
       movieNameSpan.textContent = newName;
       input.replaceWith(movieNameSpan);
 
-      // Change back to Edit button
+      // Changing back to edit button after saving
       const editBtn = document.createElement("span");
       editBtn.textContent = "Edit";
       editBtn.classList.add("edit");
@@ -77,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Add new movie form
+  // Adding a new movie
   const addMovieForm = forms["add-movie"];
   addMovieForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -98,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const editBtn = document.createElement("span");
     const deleteBtn = document.createElement("span");
 
-    // Set up the new movie item
+    // movie item container
     movieName.textContent = userInput;
     editBtn.textContent = "Edit";
     deleteBtn.textContent = "Delete";
@@ -121,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
     li.appendChild(buttonDiv);
     list.appendChild(li);
 
-    // Clear the form
+    // reseting the form
     addMovieForm.reset();
   });
 });
