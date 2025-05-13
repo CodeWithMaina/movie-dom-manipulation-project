@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image:url(/images/tech.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #444;
+    letter-spacing: 3px;
+}
+
+#wrapper {
+    background-color: #eee;
+    max-width: 960px;
+    margin: 40px auto;
+    border-radius: 6px;
+    border: 1px solid #444;
+}
+#page-banner {
+    background-color: #df5b3f;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+}
+#add-movie,
+#movie-list {
+    margin: 30px;
+}
+
+#movie-list ul {
+    list-style: none;
+}
+#movie-list ul li {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+#movie-list ul li:hover {
+    border-left: 1px solid #9361bf;
+    background-color: #f4f4f4;
+}
+.delete {
+    background-color: #df5b3f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+.delete:hover {
+    background-color: maroon;
+}
+#add-movie {
+    width: 400px;
+    margin: 0 auto;
+}
+#add-movie input {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #fff;
+    width: 300px;
+}
+#add-movie button {
+    background-color: green;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+#add-movie button:hover {
+    background-color: greenyellow;
+}
