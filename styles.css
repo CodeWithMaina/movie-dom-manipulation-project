@@ -43,6 +43,15 @@ body {
     border-left: 1px solid #9361bf;
     background-color: #f4f4f4;
 }
+.edit {
+    background-color: burlywood;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+.edit:hover {
+    background-color: hotpink;
+}
 .delete {
     background-color: #df5b3f;
     color: white;
